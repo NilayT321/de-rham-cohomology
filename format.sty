@@ -1,0 +1,116 @@
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+\RequirePackage{float}
+\RequirePackage{tikz}
+\RequirePackage{pgfplots}
+\RequirePackage{graphicx}
+\RequirePackage{float}
+\RequirePackage{fancyhdr}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{xcolor}
+\RequirePackage{mathtools}
+\RequirePackage{import}
+\pgfplotsset{compat = 1.18}
+\tcbuselibrary{skins}
+\tcbuselibrary{theorems}
+\tcbuselibrary{breakable}
+
+% \renewcommand{\chaptername}{Lecture}
+
+% ======================= HEADER =======================
+% Change it for different classes / purposes
+\lhead{Nilay Tripathi}
+\chead{MATH 441 -- Introductory Topology I}
+% \pagestyle{fancy} % Comment this line to remove the header
+% ======================= ======================= ===============
+
+
+% ======================= THEOREM STYLES =======================
+\theoremstyle{plain}
+\newtheorem{thrm}{Theorem}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem{cor}{Corollary}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{examp}{Example}
+% ======================= ======================= ===============
+
+% Blackboard fonts
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\F}{\ensuremath{\mathbb{F}}}
+
+% Script fonts
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\calP}{\mathcal{P}}
+
+
+% ======================= FOR LINEAR ALGEBRA =======================
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\Dim}{dim}
+\DeclareMathOperator{\Null}{Null}
+\DeclareMathOperator{\Range}{Range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\trace}{tr}
+\newcommand{\prtl}{\partial}
+\newcommand{\betap}{{\beta'}}
+\newcommand{\identitymapV}{\mathbf{1}_V}
+\newcommand{\starsup}{\ensuremath{^{\star}}}
+\newcommand{\starstar}{\ensuremath{^{\star\star}}}
+\newcommand{\TT}{^\top}
+% ======================= ======================= ===================
+
+% Include inkscape figures 
+\newcommand{\incfig}[2]{%
+    \def\svgwidth{#1}
+    \import{figs}{#2.pdf_tex}
+}
+% ======================= FOR TOPOLOGY =======================
+\DeclareMathOperator{\Bd}{Bd}
+\newcommand{\obar}{\overline}
+% ============================================================
+
+% ======================= FOR PROBABILITY/STATISTICS =======================
+\newcommand{\Prob}[1]{\mathbb{P} \left( #1 \right)}
+\newcommand{\E}[1]{\mathbb{E} \left[ #1 \right]}
+\newcommand{\V}[1]{\mathbb{V} \left[ #1 \right]}
+% ==========================================================================
+
+% Environment for exercise and solutions
+\newcounter{exerciseCtr} \setcounter{exerciseCtr}{1}
+\newenvironment{prob}[2]{
+    \begin{tcolorbox}[breakable, colback = orange!25, colframe = orange, parbox = false]
+		\textbf{\textsf{Exercise \arabic{exerciseCtr} (Problem #1, Section \S#2)}} \par \vspace{0.3em}
+    \noindent
+}{
+    \stepcounter{exerciseCtr}
+    \end{tcolorbox}
+    \vspace{0.5em}
+}
+
+\newenvironment{soln}{
+    \begin{tcolorbox}[breakable, blanker, before skip = 2pt, borderline west = {0.5mm}{0pt}{black}, left* = 3mm, parbox = false]
+    \textbf{\textsf{Solution:}} \par \vspace{0.1pt}
+    \noindent
+}{
+    \end{tcolorbox}
+		\vspace{1.0em}
+}
+
+
+\makeatletter
+\newenvironment<>{myproof}[1][\proofname]{%
+  \par
+  \def\insertproofname{#1\@addpunct{.}}%
+  \pushQED{\qed}
+  \alert{\textbf{\insertproofname}} \hspace*{\fill} \\}
+{\popQED}
+\makeatother
