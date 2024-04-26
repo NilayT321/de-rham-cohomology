@@ -1,4 +1,5 @@
 \RequirePackage[utf8]{inputenc}
+\RequirePackage[margin=1.0in]{geometry}
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}
@@ -12,11 +13,14 @@
 \RequirePackage[most]{tcolorbox}
 \RequirePackage{xcolor}
 \RequirePackage{mathtools}
-\RequirePackage{import}
+\RequirePackage[hidelinks, colorlinks=true, linkcolor = blue, urlcolor = blue]{hyperref}
+\RequirePackage{svg}
 \pgfplotsset{compat = 1.18}
 \tcbuselibrary{skins}
 \tcbuselibrary{theorems}
 \tcbuselibrary{breakable}
+
+
 
 % \renewcommand{\chaptername}{Lecture}
 
@@ -66,13 +70,13 @@
 \newcommand{\starsup}{\ensuremath{^{\star}}}
 \newcommand{\starstar}{\ensuremath{^{\star\star}}}
 \newcommand{\TT}{^\top}
+\newcommand{\vecte}{\mathbf{e}}
+\newcommand{\vectx}{\mathbf{x}}
+\newcommand{\vecty}{\mathbf{y}}
+\newcommand{\vectu}{\mathbf{u}}
+\newcommand{\vecth}{\mathbf{h}}
 % ======================= ======================= ===================
 
-% Include inkscape figures 
-\newcommand{\incfig}[2]{%
-    \def\svgwidth{#1}
-    \import{figs}{#2.pdf_tex}
-}
 % ======================= FOR TOPOLOGY =======================
 \DeclareMathOperator{\Bd}{Bd}
 \newcommand{\obar}{\overline}
@@ -107,10 +111,10 @@
 
 
 \makeatletter
-\newenvironment<>{myproof}[1][\proofname]{%
-  \par
-  \def\insertproofname{#1\@addpunct{.}}%
-  \pushQED{\qed}
-  \alert{\textbf{\insertproofname}} \hspace*{\fill} \\}
-{\popQED}
-\makeatother
+% \newenvironment<>{myproof}[1][\proofname]{%
+%   \par
+%   \def\insertproofname{#1\@addpunct{.}}%
+%   \pushQED{\qed}
+%   \alert{\textbf{\insertproofname}} \hspace*{\fill} \\}
+% {\popQED}
+% \makeatother
