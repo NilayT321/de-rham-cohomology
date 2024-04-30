@@ -1,0 +1,59 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{format}
+\usepackage{helvet}
+
+\title[de Rham Cohomology]{de Rham Cohomology \& Stokes' Theorem}
+\subtitle{Math 412 -- Final Project}
+\author{Nilay Tripathi}
+\date{May 3rd, 2023}
+
+\svgpath{figs/}
+
+\begin{document}
+		\maketitle
+
+		\begin{frame}{Overview}
+				Differential forms provide a unifed approach to integrate in higher dimensions (and also over arbitrary manifolds). 
+				\only<2->{
+						\begin{columns}
+								\column{0.4\textwidth} 
+								We have \alert{Stokes' theorem}:
+								\begin{equation*}
+										\int_{\prtl E} \omega = \int_E d\omega 
+								\end{equation*}
+
+								\column{0.6\textwidth}
+										\begin{figure}[H]
+												\centering
+												\includesvg[width = 0.7\textwidth]{manifoldE}
+										\end{figure}
+						\end{columns}
+				}
+				\only<3->{But what happens when Stokes' theorem fails, or when it cannot be used?}
+		\end{frame}
+
+		\begin{frame}{Overview \& Idea}
+				\begin{block}{Idea}
+						Stokes' theorem fails in the presence of \emph{holes}. The \alert{de Rham cohomology} is a tool to measure how many holes a space has.
+				\end{block}
+				We will: 
+				\begin{itemize}
+						\item<2-> Review some basic terminology to be used in the discussion of Stokes' theorem 
+						\item<3-> A brief introduction to the idea of homology, which can be used to detect holes. 
+						\item<4-> Introducing the de Rham cohomology as a tool to measure holes 
+						\item<5-> Applications (\alert{work on these})
+				\end{itemize}
+		\end{frame}
+
+		\begin{frame}{Cells}
+				\begin{definition}[$k$-Cell]
+						A \alert{$k$-cell} on a space $U \subseteq \R^n$ is a continuous map from $\alpha: [0,1]^k \to U$. 
+				\end{definition}
+				\begin{figure}[H]
+						\centering
+						\includesvg[width = 0.4\textwidth]{cells}
+						\caption{Some cells: A 0-cell $\sigma^0$, 1-cell $\sigma^1$, and a 2-cell $\sigma^2$}.
+				\end{figure}
+		\end{frame}
+\end{document}
